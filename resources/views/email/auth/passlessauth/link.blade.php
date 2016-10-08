@@ -1,0 +1,1 @@
+Your Login Link is : <a href ="{{ $link }} "> {{  $link }} </a> Link will expire in 120 seconds.
