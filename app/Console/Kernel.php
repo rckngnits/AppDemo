@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \App\Console\commands\ClearExpiredUserLoginTokens::class,
+        \App\Console\Commands\ClearExpiredUserLoginTokens::class,
     ];
 
     /**
