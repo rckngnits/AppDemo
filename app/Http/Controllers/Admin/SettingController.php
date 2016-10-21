@@ -7,16 +7,15 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class SettingController extends Controller
 {
-    public function __construct()
+    public function __counstruct()
     {
-    	$this->middleware('auth');
+    	$this->middlewatre('auth');
     }
 
     public function index()
     {
-    	return view('admin.home.index');
+    	return view('admin.settings.index');
     }
 }
-

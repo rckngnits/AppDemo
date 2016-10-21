@@ -44,12 +44,21 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Name <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{ Auth::user()->name }} <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><a href="{{ url('/admin/profile') }}">Profile</a></li>
+            <li><a href="{{ url('/admin/settings') }}">Settings</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Logout</a></li>
+            <li>  <a href="{{ url('/logout') }}"
+                      onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">
+                      Logout
+                  </a>
+
+                  <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                  </form>
+            </li>
           </ul>
         </li>
       </ul>
@@ -65,21 +74,31 @@
   <!-- Start menu section -->
     <menu class="col-md-2">
 
-      <div class="panel">
-      <br> <br> <br> <br>
+      <div class="panel row">
+        <div class="col-md-4"> 
+            <img src=" {{ url('/img/user.gif') }} " />
+
+
+        </div>
+        <div class="col-md-8">
+            <h4> {{ Auth::user()->name }} </h4>
+            <h6> Management </h6>
+
+
+        </div>
       </div>
 
 
 
       <div class="panel">
       <ul>
-        <li> <a href="#"> Dashboard </a> </li>
+        <li> <a href="{{ url('/admin/dashboard') }}"> Dashboard </a> </li>
       </ul>
       </div>
 
       <div class="panel">
       <ul>
-        <li> <a href="#"> Profile </a> </li>
+        <li> <a href="{{ url('/admin/profile') }}"> Profile </a> </li>
       </ul>
       </div>
 
@@ -88,9 +107,9 @@
       <ul>
         <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#user-nav"> Users </a> </li>
       </ul>
-      <ul class="collapse" id="user-nav">
-        <li> <a href="#"> Add New Users </a> </li>
-        <li> <a href="#"> All Users </a> </li>    
+      <ul class="collapse submenu" id="user-nav">
+        <li> <a href="{{ url('/admin/user/create') }}"> Add New Users </a> </li>
+        <li> <a href="{{ url('/admin/user') }}"> All Users </a> </li>    
       </ul> 
       </div>
 
@@ -98,9 +117,9 @@
       <ul>
         <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#department-nav"> departments </a> </li>
       </ul>
-      <ul class="collapse" id="department-nav">
-        <li> <a href="#"> Add New department </a> </li>
-        <li> <a href="#"> All departments </a> </li>    
+      <ul class="collapse submenu" id="department-nav">
+        <li> <a href="{{ url('/admin/department/create') }}"> Add New department </a> </li>
+        <li> <a href="{{ url('/admin/department') }}"> All departments </a> </li>    
       </ul> 
       </div>
 
@@ -108,9 +127,9 @@
       <ul>
         <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#role-nav"> roles </a> </li>
       </ul>
-      <ul class="collapse" id="role-nav">
-        <li> <a href="#"> Add New role </a> </li>
-        <li> <a href="#"> All roles </a> </li>    
+      <ul class="collapse submenu" id="role-nav">
+        <li> <a href="{{ url('/admin/role/create') }}"> Add New role </a> </li>
+        <li> <a href="{{ url('/admin/role') }}"> All roles </a> </li>    
       </ul> 
       </div>
 
@@ -118,9 +137,9 @@
       <ul>
         <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#client-nav"> clients </a> </li>
       </ul>
-      <ul class="collapse" id="client-nav">
-        <li> <a href="#"> Add New client </a> </li>
-        <li> <a href="#"> All clients </a> </li>    
+      <ul class="collapse submenu" id="client-nav">
+        <li> <a href="{{ url('/admin/role/create') }}"> Add New client </a> </li>
+        <li> <a href="{{ url('/admin/client') }}"> All clients </a> </li>    
       </ul> 
       </div>
 
@@ -128,15 +147,15 @@
       <ul>
         <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#task-nav"> Tasks </a> </li>
       </ul>
-      <ul class="collapse" id="task-nav">
-        <li> <a href="#"> Add New Task </a> </li>
-        <li> <a href="#"> All Tasks </a> </li>    
+      <ul class="collapse submenu" id="task-nav">
+        <li> <a href="{{ url('/admin/task/create') }}"> Add New Task </a> </li>
+        <li> <a href="{{ url('/admin/task') }}"> All Tasks </a> </li>    
       </ul> 
       </div>
 
       <div class="panel">
       <ul>
-        <li> <a href="#"> Settings </a> </li>
+        <li> <a href="{{ url('/admin/settings') }}"> Settings </a> </li>
       </ul>
       </div>
 
@@ -160,7 +179,7 @@
 
 
 
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="{{url('js/jquery.js')}}"></script>
+<script src="{{ url('js/bootstrap.min.js')}}"> </script>
 </body>
 </html>

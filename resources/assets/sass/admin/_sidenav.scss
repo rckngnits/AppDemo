@@ -30,6 +30,11 @@ menu ul li{
   background: $sidenav-primary;
 }
 
+menu .panel:first-child{
+  border-bottom:1px solid #ccc;
+  padding-bottom:30px;
+  padding-top:10px;
+}
 menu ul li a{
   text-decoration: none;
   display: block;
@@ -37,6 +42,7 @@ menu ul li a{
   padding: 10px 20px;
   color: $link-color;
   border-bottom:1px solid #ccc;
+  text-transform: capitalize;
 }
 
 menu ul li a:hover{
@@ -60,4 +66,7 @@ menu ul li a:visited{
 menu ul li:hover a{
   $background: $sidenav-focus;
   color: $text-hover-color;
+}
+
+.submenu{
 }
