@@ -1,0 +1,63 @@
+$sidenav-primary: #F8F8F8;
+$sidenav-focus:   #428BCA;
+$text-hover-color: #FFFFFF;
+$link-color:        #1933EC;
+
+menu.col-md-2 {
+    margin: 0px;
+    padding:0px;
+    border-right: 1px solid #ccc;
+    min-height: 700px;
+}
+
+.panel{
+  margin: 0px;
+  padding: 0px;
+  background: $sidenav-primary;
+  display: block;
+}
+
+
+
+menu ul {
+  margin: 0px;
+  padding:0px;
+  background: $sidenav-primary;
+}
+
+menu ul li{
+  list-style: none;
+  background: $sidenav-primary;
+}
+
+menu ul li a{
+  text-decoration: none;
+  display: block;
+  background: $sidenav-primary;
+  padding: 10px 20px;
+  color: $link-color;
+  border-bottom:1px solid #ccc;
+}
+
+menu ul li a:hover{
+  text-decoration: none;
+  background: $sidenav-focus;
+  color: $text-hover-color;
+}
+
+menu ul li a:active{
+  text-decoration: none;
+  background: $sidenav-focus;
+  color: $text-hover-color;
+}
+
+menu ul li a:visited{
+  text-decoration: none;
+  color: $link-color;
+}
+
+
+menu ul li:hover a{
+  $background: $sidenav-focus;
+  color: $text-hover-color;
+}

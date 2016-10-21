@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+bodybg {
+  color: #564739; }
+
+.navbar {
+  margin-bottom: 0px; }
+
+menu.col-md-2 {
+  margin: 0px;
+  padding: 0px;
+  border-right: 1px solid #ccc;
+  min-height: 700px; }
+
+.panel {
+  margin: 0px;
+  padding: 0px;
+  background: #F8F8F8;
+  display: block; }
+
+menu ul {
+  margin: 0px;
+  padding: 0px;
+  background: #F8F8F8; }
+
+menu ul li {
+  list-style: none;
+  background: #F8F8F8; }
+
+menu ul li a {
+  text-decoration: none;
+  display: block;
+  background: #F8F8F8;
+  padding: 10px 20px;
+  color: #1933EC;
+  border-bottom: 1px solid #ccc; }
+
+menu ul li a:hover {
+  text-decoration: none;
+  background: #428BCA;
+  color: #FFFFFF; }
+
+menu ul li a:active {
+  text-decoration: none;
+  background: #428BCA;
+  color: #FFFFFF; }
+
+menu ul li a:visited {
+  text-decoration: none;
+  color: #1933EC; }
+
+menu ul li:hover a {
+  color: #FFFFFF; }
+
+.btn {
+  vertical-align: middle; }
+
+/*# sourceMappingURL=admin.css.map */

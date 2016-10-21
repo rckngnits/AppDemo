@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index');
 Route::get('/login/passlessauth', 'Auth\PassLessAuthController@show');
 Route::post('/login/passlessauth', 'Auth\PassLessAuthController@sendToken');
 Route::get('/login/passlessauth/{token}', 'Auth\PassLessAuthController@validateToken');
+
+route::get('/admin', 'Admin\HomeController@index');

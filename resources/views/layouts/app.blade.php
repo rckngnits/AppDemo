@@ -11,6 +11,8 @@
     <title>{{ config('app.name', 'ABC Services') }}</title>
 
     <!-- Styles -->
+    <!-- <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/front.css" rel="stylesheet"> -->
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
