@@ -2,4 +2,24 @@
 
 @section('content')
 		<h3> List of all Users </h3>
+		<table class="table table-bordered table-hover">
+			<tr>
+				<th> sl. No. </th>
+				<th> Name </th>
+				<th> email </th>
+				<th> Work Number </th>
+				<th> Department </th>
+				<th> Status </th>
+			</tr>
+		@foreach ($users as $user)
+			<tr>
+				<td> {{ $user -> id }}</td>
+				<td> {{ $user -> name }}</td>
+				<td> {{ $user -> email}}</td>
+				<td> 9999999999 </td>
+				<td> Administrators </td>
+				<td> <a href="{{ url('admin/user/'.$user->id)}}" class="btn btn-primary"> Details </a></td>
+			</tr>
+		@endforeach
+		</table>
 @stop

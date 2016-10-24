@@ -18,7 +18,7 @@
 <link href="/css/admin.css" rel="stylesheet">
 
 <script>
-  window.Laravel = <?php echo json_encode([
+  window.'ABC Services' = <?php echo json_encode([
    'csrfToken' => csrf_token(),
    ]); ?>
  </script>
@@ -138,7 +138,7 @@
         <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#client-nav"> clients </a> </li>
       </ul>
       <ul class="collapse submenu" id="client-nav">
-        <li> <a href="{{ url('/admin/role/create') }}"> Add New client </a> </li>
+        <li> <a href="{{ url('/admin/client/create') }}"> Add New client </a> </li>
         <li> <a href="{{ url('/admin/client') }}"> All clients </a> </li>    
       </ul> 
       </div>

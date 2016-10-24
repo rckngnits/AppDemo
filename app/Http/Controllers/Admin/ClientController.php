@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use App\Models\Client;
+use App\Http\Requests\Client\StoreClientRequest;
 use App\Http\Controllers\Controller;
 
 class ClientController extends Controller
@@ -16,7 +16,8 @@ class ClientController extends Controller
 
     public function index()
     {
-    	return view('admin.clients.index');
+        $clients = Client::all(); 
+        return view('admin.clients.index' , compact('clients'));
     }
 
     public function create()
@@ -24,8 +25,25 @@ class ClientController extends Controller
     	return view('admin.clients.create');
     }
 
-    public function show()
+    public function show(Client $client)
     {
-    	return view ('admin.clients.index');
+        return view('admin.clients.show',compact('client'));
     }
+    public function store(StoreClientRequest $request)
+    {
+        Client::create($request->all());
+        return back()->with('success','Client Added');
+    }
+
+    public function edit(Client $client)
+    {
+        return view ('admin.clients.edit', compact('client'));
+    }
+
+    public function update(Request $request, Client $client)
+    {
+        $client->update($request->all());
+        return back()->with('success','Client Updated');
+    }
+
 }
