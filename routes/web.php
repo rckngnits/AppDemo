@@ -26,6 +26,7 @@ Route::group(['middleware' => 'web'], function() {
 		route::get('/admin/profile', 'Admin\ProfileController@index');
 
 		route::get('/admin/user', 'Admin\UserController@index');
+		route::post('/admin/user/', 'Admin\UserController@store');
 		route::get('/admin/user/create', 'Admin\UserController@create');
 		route::get('/admin/user/{user}', 'Admin\UserController@show');
 

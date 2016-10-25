@@ -16,8 +16,8 @@
 				<td> {{ $user -> id }}</td>
 				<td> {{ $user -> name }}</td>
 				<td> {{ $user -> email}}</td>
-				<td> 9999999999 </td>
-				<td> Administrators </td>
+				<td> {{ $user -> primary_number }} </td>
+				<td> {{$user -> department -> name }} </td>
 				<td> <a href="{{ url('admin/user/'.$user->id)}}" class="btn btn-primary"> Details </a></td>
 			</tr>
 		@endforeach

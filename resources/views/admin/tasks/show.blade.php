@@ -3,26 +3,26 @@
 @section('content')
 
 	<div class="row">
-		<div class="col-md-7"> 
+		<div class="col-md-6"> 
 			<h2> Client Details </h2>
 			<div class="row">
-				<div class="col-md-6"> Name : {{ $task  -> fk_client_id}} </div> <div class="col-md-6"> Email :-</div>
+				<div class="col-md-6"> Name : {{ $task->client->name}} </div> <div class="col-md-6"> Email :- {{ $task->client->email}}</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6"> Contact :- 99999999 </div> <div class="col-md-6"> Details 4</div>
+				<div class="col-md-6"> Contact :- {{ $task->client->primary_number}} </div> <div class="col-md-6"> {{ $task->client->city }}</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6"> Details 5 </div> <div class="col-md-6"> Details 6 </div>
+				<div class="col-md-6"> {{ $task->client->state }} </div> <div class="col-md-6"> Pincode : {{ $task->client->pincode }}</div>
 			</div>
 
 		</div>
-		<div class="col-md-5">
+		<div class="col-md-6">
 			<h2> Assigned User Details </h2>
 			<div class="row">
-				<div class="col-md-6"> Name :- {{$task -> fk_user_id_assign }} Name (Department) </div> <div class="col-md-6"> Email :- {{ $user -> email }} </div>
+				<div class="col-md-6"> Name :- {{$task->user -> name }} </div> <div class="col-md-6"> Email :- {{ $task->user -> email }} </div>
 			</div>
 			<div class="row">
-				<div class="col-md-6"> Contact :- 99999999 </div> <div class="col-md-6"> Department </div>
+				<div class="col-md-6"> Contact :- {{ $task->user->name}} </div> <div class="col-md-6"> Department </div>
 			</div>
 			<div class="row">
 				<div class="col-md-6"> Details 5 </div> <div class="col-md-6"> Details 6 </div>
@@ -37,10 +37,10 @@
 		</div>
 		<div class="col-md-3"> 
 		<h4 style="background: #008AE6; display: block; color: #FFFFFF; padding:10px; margin: 0px 0px 10px 0px ;"> Task Information </h4>
-		<p> Assigned User :- <a href="#"> John cena </a> </p>
-		<p> Created at :- 21/10/2016 </p>
-		<p> Deadline :- <span style="color: red;"> 31/10/2016 </span> </p>
-		<p> Status :- closed </p>
+		<p> Assigned User :- <a href="{{ url('admin/user/'.$task->fk_user_id_assign)}}"> {{ $task->user->name}} </a> </p>
+		<p> Created at :- {{ $task->created_at}}</p>
+		<p> Deadline :- <span style="color: red;"> {{ $task->deadline}} </span> </p>
+		<p> Status :- {{ $task -> status }}</p>
 		<a href="#" class="btn btn-block btn-success"> Close Task </a>
 		</div>
 	

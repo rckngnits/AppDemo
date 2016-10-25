@@ -66,6 +66,21 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('primary_number') ? ' has-error' : '' }}">
+                            <label for="primary_number" class="col-md-4 control-label">Primary Number</label>
+
+                            <div class="col-md-6">
+                                <input id="primary_number" type="text" class="form-control" name="primary_number" required>
+
+                                @if ($errors->has('primary_number'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('primary_number') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

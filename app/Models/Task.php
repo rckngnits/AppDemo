@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
@@ -23,7 +24,7 @@ class Task extends Model
         return $this->belongsTo(User::class, 'fk_user_id_assign');
     }
 
-    public function clientAssignee()
+    public function client()
     {
         return $this->belongsTo(Client::class, 'fk_client_id');
     }

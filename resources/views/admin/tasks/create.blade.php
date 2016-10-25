@@ -42,8 +42,9 @@
 		<div class="form-group">
 			<lable for="client" class="control-lable"> Client : </lable>
 			<select class="form-control" name="fk_client_id" id="client">
-					<option value="1"> First Client </option>
-					<option value="2"> Second Client </option>
+					@foreach ( $clients as $client )
+					<option value="{{$client -> id}}"> {{$client -> name }} ( {{$client -> email }} ) </option>
+					@endforeach
 			</select>
 		</div>
 		</div>
@@ -53,8 +54,9 @@
 		<div class="form-group">
 			<lable for="user_assigned" class="control-lable"> Assign User : </lable>
 			<select class="form-control" name="fk_user_id_assign" id="user_assigned">
-					<option value="1"> First User </option>
-					<option value="2"> Second User </option>
+				@foreach ( $users as $user )
+					<option value="{{$user -> id}}"> {{$user -> name }} </option>
+				@endforeach
 				</select>
 		</div>
 		</div>

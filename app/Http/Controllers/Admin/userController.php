@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Http\Requests;
+use App\Models\Department;
+use App\Http\Requests\User\StoreUserRequest;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
@@ -22,11 +23,18 @@ class UserController extends Controller
 
     public function create()
     {
-    	return view('admin.users.create');
+        $departments = Department::all();
+    	return view('admin.users.create', compact('departments'));
     }
     public function show(User $user)
     {
         return view('admin.users.show',compact('user'));
+    }
+
+    public function store(StoreUserRequest $request)
+    {
+        User::create($request->all());
+        return back()->with('success','User Added');
     }
 }
 

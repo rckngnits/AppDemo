@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 Use App\Auth\Traits\PassLessAuthenticable;
+use App\Models\Department;
 
 class User extends Authenticatable
 {
@@ -16,7 +17,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 
+        'email', 
+        'password',
+        'address',
+        'primary_number',
+        'secondary_number',
+        'fk_department_id'
     ];
 
     /**
@@ -32,4 +39,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Tasks::class, 'fk_user_id_assign', 'id');
     }
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class, 'fk_department_id');
+    }
+
+
 }

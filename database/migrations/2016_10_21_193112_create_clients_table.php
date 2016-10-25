@@ -17,8 +17,8 @@ class CreateClientsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->integer('primary_number');
-            $table->integer('secondary_number')->nullable();
+            $table->bigInteger('primary_number');
+            $table->bigInteger('secondary_number')->nullable();
             $table->string('address');
             $table->integer('pincode');
             $table->string('city');

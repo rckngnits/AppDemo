@@ -10,4 +10,10 @@ class Department extends Model
 			'name',
 			'description'
 			]; 
+
+	public function users()
+	{
+
+		return $this->hasMany(Users::class, 'fk_department_id', 'id');
+	}
 }

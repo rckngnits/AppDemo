@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\User;
+use App\Models\Client;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Http\Requests\Task\StoreTaskRequest;
@@ -22,13 +23,15 @@ class TaskController extends Controller
     }
     public function create()
     {
-    	return view ('admin.tasks.create');
+        $clients = Client::orderBy('name', 'ASC')->get();
+        $users = User::all();
+    	return view ('admin.tasks.create', compact('users','clients'));
     }
 
-    public function show(Task $task , User $user)
+    public function show(Task $task)
     {
-        return $user;
-       // return view ('admin.tasks.show',compact('task', 'user'));
+        // return $task->user;
+       return view ('admin.tasks.show',compact('task', 'user'));
     }
 
     public function store(StoreTaskRequest $request, Task $task)
