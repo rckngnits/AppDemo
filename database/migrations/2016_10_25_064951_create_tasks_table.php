@@ -14,6 +14,7 @@ class CreateTasksTable extends Migration
     public function up()
     {
         Schema::create('tasks', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('title');
             $table->text('description');
@@ -26,7 +27,6 @@ class CreateTasksTable extends Migration
             $table->foreign('fk_client_id')->references('id')->on('clients');
             $table->date('deadline');
             $table->timestamps();
-            $table->engine = 'InnoDB';
         });
     }
 
