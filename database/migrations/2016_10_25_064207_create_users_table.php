@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->bigInteger('primary_number');
             $table->bigInteger('secondary_number')->nullable();
             $table->integer('fk_department_id')->unsigned();
-            $table->foreign('fk_department_id')->references('id')->on('department');
+            $table->foreign('fk_department_id')->references('id')->on('departments');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
