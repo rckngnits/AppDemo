@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDepartmentTable extends Migration
+class CreateStatusesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateDepartmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('departments', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+        Schema::create('statuses', function (Blueprint $table) {
+            $table-> engine='InnoDB';
             $table->increments('id');
-            $table->string('name');
-            $table->string('description');
+            $table->string('title');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateDepartmentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('departments');
+        Schema::dropIfExists('status');
     }
 }

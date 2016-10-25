@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\User;
+use App\Models\Status;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
@@ -10,9 +11,9 @@ class Task extends Model
     protected $fillable = [
         'title',
         'description',
-        'status',
         'fk_user_id_assign',
         'fk_client_id',
+        'fk_status_id',
         'deadline'
     ];
     protected $dates = ['deadline'];
@@ -32,5 +33,14 @@ class Task extends Model
     public function taskCreator()
     {
         return $this->belongsTo(User::class, 'fk_user_id_created');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comments::class, 'fk_task_id' , 'id');
+    }
+    public function status()
+    {
+        return $this -> belongsTo(Status::class , 'fk_status_id');
     }
 }

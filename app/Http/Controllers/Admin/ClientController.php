@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Http\Requests\Client\StoreClientRequest;
 use App\Http\Controllers\Controller;
+use App\Models\Task;
 
 class ClientController extends Controller
 {
@@ -27,7 +28,8 @@ class ClientController extends Controller
 
     public function show(Client $client)
     {
-        return view('admin.clients.show',compact('client'));
+        $tasks = Task::where('id', $client->id)->with(['user'])->get();
+        return view('admin.clients.show',compact('client','tasks'));
     }
     public function store(StoreClientRequest $request)
     {

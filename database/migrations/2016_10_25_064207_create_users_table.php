@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->bigInteger('primary_number');
             $table->bigInteger('secondary_number')->nullable();
-            $table->integer('fk_department_id')->unsigned();
+            $table->unsignedInteger('fk_department_id');
             $table->foreign('fk_department_id')->references('id')->on('departments');
             $table->string('password');
             $table->rememberToken();

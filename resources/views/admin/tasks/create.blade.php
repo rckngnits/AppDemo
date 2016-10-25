@@ -64,10 +64,11 @@
 
 		<div class="col-md-6">
 			<div class="form-group">
-				<lable for="status" class="control-lable"> Status </lable>
-				<select class="form-control" name="status">
-					<option value="1"> Open </option>
-					<option value="2"> Completed </option>
+				<lable for="fk_status_id" class="control-lable"> Status </lable>
+				<select class="form-control" name="fk_status_id">
+					@foreach ($statuses as $s)
+						<option value="{{$s -> id}}"> {{$s -> title }} </option>
+					@endforeach
 				</select>
 			</div>
 		</div>

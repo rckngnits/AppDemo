@@ -52,6 +52,8 @@ Route::group(['middleware' => 'web'], function() {
 		route::get('/admin/task/create', 'Admin\TaskController@create');
 		route::get('/admin/task/{task}', 'Admin\TaskController@show');
 
+		route::post('/admin/comment', 'Admin\CommentController@store');
+
 		route::get('/admin/settings', 'Admin\SettingController@index');
 });
 

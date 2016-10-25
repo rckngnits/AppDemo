@@ -33,53 +33,19 @@
 					<th> Status </th>
 				</tr>
 
-				<tr style="background-color:#adebad">
-					<td> Title </td>
-					<td> Description of task related to user </td>
-					<td> Assigned User</td>
-					<td> Created at </td>
-					<td> Status </td>
+				@foreach ($tasks as $task)
+
+				<tr>
+					<td> {{$task -> title}} </td>
+					<td> {{$task -> description }} </td>
+					<td> {{$task-> user-> name }}</td>
+					<td> {{$task -> created_at}} </td>
+					<td> {{$task-> statuses -> title}} </td>
 				</tr>
 
-				<tr style="background-color:#adebad">
-					<td> Title </td>
-					<td> Description of task related to user </td>
-					<td> Assigned User</td>
-					<td> Created at </td>
-					<td> Status </td>
-				</tr>
+				@endforeach
 
-				<tr style="background-color:#ff6666">
-					<td> Title </td>
-					<td> Description of task related to user </td>
-					<td> Assigned User</td>
-					<td> Created at </td>
-					<td> Attention needed </td>
-				</tr>
-
-				<tr style="background-color:#adebad">
-					<td> Title </td>
-					<td> Description of task related to user </td>
-					<td> Assigned User</td>
-					<td> Created at </td>
-					<td> Status </td>
-				</tr>
-
-				<tr style="background-color:#adebad">
-					<td> Title </td>
-					<td> Description of task related to user </td>
-					<td> Assigned User</td>
-					<td> Created at </td>
-					<td> Status </td>
-				</tr>
-
-				<tr style="background-color:#adebad">
-					<td> Title </td>
-					<td> Description of task related to user </td>
-					<td> Assigned User</td>
-					<td> Created at </td>
-					<td> Status </td>
-				</tr>
+			
 			</table>
 		</div>
 	</div>
