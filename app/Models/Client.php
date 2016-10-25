@@ -19,6 +19,6 @@ class Client extends Model
 
     public function task()
     {
-        return $this->hasMany(Task::class, 'fk_client_id');
+        return $this->hasMany(Task::class, 'fk_client_id' , 'id');
     }
 }

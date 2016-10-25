@@ -28,7 +28,7 @@ class ClientController extends Controller
 
     public function show(Client $client)
     {
-        $tasks = Task::where('id', $client->id)->with(['user'])->get();
+        $tasks = Task::where('fk_client_id', $client->id)->with(['user'])->get();
         return view('admin.clients.show',compact('client','tasks'));
     }
     public function store(StoreClientRequest $request)
