@@ -26,6 +26,7 @@ class CreateTasksTable extends Migration
             $table->foreign('fk_client_id')->references('id')->on('clients');
             $table->date('deadline');
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 
