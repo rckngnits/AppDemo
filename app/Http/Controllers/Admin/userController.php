@@ -32,6 +32,8 @@ class UserController extends Controller
         return view('admin.users.show',compact('user'));
     }
 
+    //Password hashed
+
     public function store(StoreUserRequest $request)
     {
         User::create([
