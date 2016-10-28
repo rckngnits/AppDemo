@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\User;
 use App\Models\Department;
@@ -33,7 +34,15 @@ class UserController extends Controller
 
     public function store(StoreUserRequest $request)
     {
-        User::create($request->all());
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']),
+            'primary_number' => $request['primary_number'],
+            'secondary_number' => $request['secondary_number'],
+            'added_by' => Auth::user()->id,
+            'fk_department_id' => $request['fk_department_id'],
+            ]);
         return back()->with('success','User Added');
     }
 }

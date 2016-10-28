@@ -14,6 +14,7 @@ class Task extends Model
         'fk_user_id_assign',
         'fk_client_id',
         'fk_status_id',
+        'fk_user_id_created',
         'deadline'
     ];
     protected $dates = ['deadline'];
@@ -22,7 +23,7 @@ class Task extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'fk_user_id_assign');
+        return $this->belongsTo(User::class, 'fk_user_id_created');
     }
 
     public function client()

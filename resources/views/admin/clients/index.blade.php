@@ -16,7 +16,7 @@
 				<td> {{ $client -> id }}</td>
 				<td> {{ $client -> name }}</td>
 				<td> {{ $client -> email}}</td>
-				<td> {{$client -> primary_number }} </td>
+				<td> <a href="{{url('/admin/department/1')}}">  {{$client -> primary_number }} </a></td>
 				<td> <a href="{{ url('admin/client/'.$client->id)}}" class="btn btn-primary"> Details </a></td>
 			</tr>
 		@endforeach

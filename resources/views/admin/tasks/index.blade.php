@@ -15,12 +15,12 @@
 			</tr>
 		@foreach ($tasks as $task)
 			<tr>
-				<td> {{ $task -> title }}</td>
+				<td> <a href="{{ url('admin/task/'.$task->id)}}" > {{ $task -> title }} </a> </td>
 				<td> {{ $task -> description}}</td>
 				<td> {{ $task -> created_at }}</td>
-				<td> Name of Client </td>
-				<td> Name of User </td>
-				<td> Open / Closed / Needs Attention </td>
+				<td> <a href ="{{url('/admin/client/'.$task->client->id)}}" > {{ $task -> client -> name}} </a> </td>
+				<td> <a href ="{{url('/admin/user/'.$task->user->id)}}" > {{ $task -> user -> name}} </a> </td>
+				<td> {{ $task -> status -> title }} </td>
 				<td> <a href="{{ url('admin/task/'.$task->id)}}" class="btn btn-success"> Details </a> </td>
 			</tr>
 		@endforeach

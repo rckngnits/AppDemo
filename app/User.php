@@ -21,6 +21,7 @@ class User extends Authenticatable
         'email', 
         'password',
         'address',
+        'added_by',
         'primary_number',
         'secondary_number',
         'fk_department_id'

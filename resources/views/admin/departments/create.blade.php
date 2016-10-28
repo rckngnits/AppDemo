@@ -25,6 +25,4 @@
 	</div>
 </div>
 
-{{var_dump($errors) }}
-
 @stop

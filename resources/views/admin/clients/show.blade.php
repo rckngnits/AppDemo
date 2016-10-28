@@ -22,7 +22,7 @@
 	</div>
 
 	<div class="container-fluid">
-		<div class="col-md-10">
+		<div class="col-md-12">
 			<h3> Tasks Related to {{$client -> name}} </h3>
 			<table class="table table-bordered table-hover">
 				<tr>
@@ -30,15 +30,17 @@
 					<th> Description </th>
 					<th> Assigned User</th>
 					<th> Created at </th>
+					<th> deadline </th>
 					<th> Status </th>
 				</tr>
-
+			
 				@foreach ($tasks as $task)
 				<tr>
-					<td> <a herf="{{url('/admin/task/'.$task->id)}}" > {{$task -> title}} </a> </td>
-					<td> {{$task -> description}}</td>
+					<td> <a href="{{url('/admin/task/'.$task->id)}}" > {{$task -> title}} </a> </td>
+					<td>   {{$task -> description }} </td>
 					<td> {{$task -> user -> name}} </td>
 					<td> {{$task -> created_at }}</td>
+					<td> {{$task -> deadline }} </td>
 					<td>  {{$task -> status-> title}} </td>
 				</tr>
 

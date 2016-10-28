@@ -35,15 +35,17 @@
 		
 			
 			<div class="col-md-12" style="background-color:#35CFBC; color: #ffffff; padding: 5px 20px;">		
-					<h3> {{ $task -> title }} </h3> <hr>
+					<h3> {{ $task -> title }} </h3>
 					<p> {{ $task -> description }} </p>
+					<hr>
+					 <p> Created at : {{$task -> created_at}} </p>
 			</div>
 
 			@foreach ($comments as $comment)
 			<div class="col-md-12" style= "background-color:#CCE5FF; padding: 5px 20px; margin: 10px 0px;">
 				{{$comment-> comment_body}}
 				<hr>
-			<h6> Comment By : {{ $comment -> user -> name}} </h6> 
+			<h6> Comment By : {{ $comment -> user -> name}} at &nbsp; {{$comment -> created_at}}</h6> 
 			</div>
 			@endforeach
 				

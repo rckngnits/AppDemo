@@ -16,6 +16,7 @@
 <link href="/css/bootstrap.css" rel="stylesheet">
 <link href="/css/bootstrap-theme.css" rel="stylesheet">
 <link href="/css/admin.css" rel="stylesheet">
+<link href="/css/font-awesome.css" rel="stylesheet">
 
 <script>
   window.'ABC Services' = <?php echo json_encode([
@@ -92,30 +93,30 @@
 
       <div class="panel">
       <ul>
-        <li> <a href="{{ url('/admin/dashboard') }}"> Dashboard </a> </li>
+        <li><a href="{{ url('/admin/dashboard') }}"><i class="fa fa-line-chart" aria-hidden="true"> </i> Dashboard </a> 
+      </a>
+
+
+         </li>
       </ul>
       </div>
 
       <div class="panel">
       <ul>
-        <li> <a href="{{ url('/admin/profile') }}"> Profile </a> </li>
-      </ul>
-      </div>
-
-
-      <div class="panel">
-      <ul>
-        <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#user-nav"> Users </a> </li>
+        <li> 
+        <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#user-nav"> 
+          <i class="fa fa-user" aria-hidden="true"> </i>   Users </a> 
+        </li>
       </ul>
       <ul class="collapse submenu" id="user-nav">
-        <li> <a href="{{ url('/admin/user/create') }}"> Add New Users </a> </li>
+        <li> <a href="{{ url('/admin/user/create') }}">Add New Users </a> </li>
         <li> <a href="{{ url('/admin/user') }}"> All Users </a> </li>    
       </ul> 
       </div>
 
       <div class="panel">
       <ul>
-        <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#department-nav"> departments </a> </li>
+        <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#department-nav"> <i class="fa fa-building-o" aria-hidden="true"> </i> departments </a> </li>
       </ul>
       <ul class="collapse submenu" id="department-nav">
         <li> <a href="{{ url('/admin/department/create') }}"> Add New department </a> </li>
@@ -125,7 +126,7 @@
 
       <div class="panel">
       <ul>
-        <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#role-nav"> roles </a> </li>
+        <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#role-nav">  <i class="fa fa-pencil-square-o" aria-hidden="true"> </i> roles </a> </li>
       </ul>
       <ul class="collapse submenu" id="role-nav">
         <li> <a href="{{ url('/admin/role/create') }}"> Add New role </a> </li>
@@ -135,7 +136,7 @@
 
       <div class="panel">
       <ul>
-        <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#client-nav"> clients </a> </li>
+        <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#client-nav">  <i class="fa fa-users" aria-hidden="true"> </i> clients </a> </li>
       </ul>
       <ul class="collapse submenu" id="client-nav">
         <li> <a href="{{ url('/admin/client/create') }}"> Add New client </a> </li>
@@ -145,7 +146,7 @@
 
       <div class="panel">
       <ul>
-        <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#task-nav"> Tasks </a> </li>
+        <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#task-nav">  <i class="fa fa-commenting-o" aria-hidden="true"> </i> Tasks </a> </li>
       </ul>
       <ul class="collapse submenu" id="task-nav">
         <li> <a href="{{ url('/admin/task/create') }}"> Add New Task </a> </li>
@@ -155,7 +156,7 @@
 
       <div class="panel">
       <ul>
-        <li> <a href="{{ url('/admin/settings') }}"> Settings </a> </li>
+        <li> <a href="{{ url('/admin/settings') }}"> <i class="fa fa-cog" aria-hidden="true"></i> Settings </a> </li>
       </ul>
       </div>
 
