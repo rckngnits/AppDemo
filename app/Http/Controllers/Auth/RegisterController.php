@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -68,6 +69,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'primary_number' => $data['primary_number'],
+            'added_by' => Auth::user()->id ?? '1',
             'fk_department_id' => 1,
         ]);
     }
