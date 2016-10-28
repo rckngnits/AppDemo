@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\User;
 use App\Models\Status;
+use App\Models\Activity;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
@@ -43,5 +44,9 @@ class Task extends Model
     public function status()
     {
         return $this -> belongsTo(Status::class , 'fk_status_id');
+    }
+    public function activities()
+    {
+        return $this -> hasMany(Activity::class, 'fk_task_id', 'id');
     }
 }

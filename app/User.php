@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 Use App\Auth\Traits\PassLessAuthenticable;
 use App\Models\Department;
+use App\Models\App;
 
 class User extends Authenticatable
 {
@@ -46,5 +47,9 @@ class User extends Authenticatable
         return $this->belongsTo(Department::class, 'fk_department_id');
     }
 
+    public function activities()
+    {
+        return $this-> hasMany(Activty::class , 'fk_user_id' , 'id');
+    }
 
 }

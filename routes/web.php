@@ -23,6 +23,7 @@ Route::group(['middleware' => 'web'], function() {
 
 		route::get('/admin', 'Admin\HomeController@index');
 		route::get('/admin/dashboard', 'Admin\DashboardController@index');
+		route::get('/admin/activity', 'Admin\ActivityController@index');
 		route::get('/admin/profile', 'Admin\ProfileController@index');
 
 		route::get('/admin/user', 'Admin\UserController@index');

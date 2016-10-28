@@ -8,6 +8,7 @@ use App\Models\Task;
 use App\Models\Status;
 use App\Models\Client;
 use App\Models\Comment;
+use App\Models\Activity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Task\StoreTaskRequest;
@@ -50,8 +51,14 @@ class TaskController extends Controller
             'deadline' => $request['deadline'],
             ]);
 
+        Activity::create([
+            'fk_user_id' => Auth::user()->id,
+            $task = Task::orderBy('id','DESC')->first(),
+            'fk_task_id' => $task->id ,
+            ]);
+
         // return Auth::user()->id;
-        return back()->with('success','Task Added');
+       return back()->with('success','Task Added');
     }
 
     public function destroy(Task $task)
