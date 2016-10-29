@@ -45,7 +45,7 @@
 
 				<div class="form-group col-md-6">
 					<label for="secondary_number" class="control-label"> Secondary Number : </label>
-					<input class="form-control" name="secondary_number" type="text" id="secondary_number" value= "11111111" value="{{$client-> secondary_number}}" required>
+					<input class="form-control" name="secondary_number" type="text" id="secondary_number" value="{{$client-> secondary_number}}" required>
 				</div>
 			</div>
 

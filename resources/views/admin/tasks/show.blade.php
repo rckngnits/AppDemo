@@ -9,7 +9,7 @@
 			<div class="col-md-6"> Name : {{ $task->client->name}} </div> <div class="col-md-6"> Email :- {{ $task->client->email}}</div>
 		</div>
 		<div class="row">
-			<div class="col-md-6"> Contact :- {{ $task->client->primary_number}} </div> <div class="col-md-6"> {{ $task->client->city }}</div>
+			<div class="col-md-6"> Contact :- {{ $task->client->primary_number}} </div> <div class="col-md-6"> City :- {{ $task->client->city }}</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6"> State : {{ $task->client->state }} </div> <div class="col-md-6"> Pincode : {{ $task->client->pincode }}</div>
@@ -19,13 +19,13 @@
 	<div class="col-md-6">
 		<h2> Assigned User Details </h2>
 		<div class="row">
-			<div class="col-md-6"> Name :- {{$task->user -> name }} </div> <div class="col-md-6"> Email :- {{ $task->user -> email }} </div>
+			<div class="col-md-12"> Name :- {{$task->user -> name }} </div> 
 		</div>
 		<div class="row">
-			<div class="col-md-6"> Contact :- {{ $task->user->name}} </div> <div class="col-md-6"> Department </div>
+			<div class="col-md-12"> Department :- {{ $task -> user-> department -> name}} </div> 
 		</div>
 		<div class="row">
-			<div class="col-md-6"> Details 5 </div> <div class="col-md-6"> Details 6 </div>
+			<div class="col-md-6"> Email :- {{ $task->user -> email }} </div> <div class="col-md-6"> Contact :- {{ $task->user->primary_number}} </div>
 		</div>
 		<br> <br>
 	</div>

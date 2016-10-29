@@ -130,15 +130,7 @@
         </ul> 
       </div>
 
-      <div class="panel">
-        <ul>
-          <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#role-nav">  <i class="fa fa-pencil-square-o" aria-hidden="true"> </i> roles </a> </li>
-        </ul>
-        <ul class="collapse submenu" id="role-nav">
-          <li> <a href="{{ url('/admin/role/create') }}"> Add New role </a> </li>
-          <li> <a href="{{ url('/admin/role') }}"> All roles </a> </li>    
-        </ul> 
-      </div>
+    
 
       <div class="panel">
         <ul>
@@ -160,16 +152,15 @@
         </ul> 
       </div>
 
-      <div class="panel">
+        <div class="panel">
         <ul>
-          <li> <a href="{{ url('/admin/settings') }}"> <i class="fa fa-cog" aria-hidden="true"></i> Settings </a> </li>
+          <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#settings">  <i class="fa fa-cog" aria-hidden="true"></i> Settings </a> </li>
         </ul>
-      </div>
-
-      <div class="panel">
-        <ul>
-          <li> <a href="#"> Sign Out </a> </li>
-        </ul>
+        <ul class="collapse submenu" id="settings">
+          <li> <a href="{{ url('/admin/settings') }}"> All Settings </a> </li>
+          <li> <a href="{{ url('/admin/role/create') }}"> Add New role </a> </li>
+          <li> <a href="{{ url('/admin/role') }}"> Manage roles </a> </li>    
+        </ul> 
       </div>
     </menu>
   </div>

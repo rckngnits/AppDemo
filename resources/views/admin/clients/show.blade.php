@@ -8,10 +8,10 @@
 				<div class="col-md-6"> Name :- {{$client->name}} </div> <div class="col-md-6"> Email :- {{$client->email}}</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6"> Contact :- {{$client -> primary_number }} </div> <div class="col-md-6"> Details 4</div>
+				<div class="col-md-6"> Contact :- {{$client -> primary_number }} </div> <div class="col-md-6"> Alternate Contact :- {{$client -> primary_number }} </div>
 			</div>
 			<div class="row">
-				<div class="col-md-6"> Details 5 </div> <div class="col-md-6"> Details 6 </div>				
+				<div class="col-md-6"> Address :- {{$client -> address }} </div> <div class="col-md-6"> {{$client -> city }} , {{$client -> state }}  </div>				
 			</div>
 		</div>
 		<div class="col-md-2 col-md-offset-1">

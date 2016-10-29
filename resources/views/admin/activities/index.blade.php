@@ -2,7 +2,7 @@
 
 @section('content')
 		
-		<h3> List of Recent Activities </h3>
+		<h3> Recent Activities </h3>
 		<table class="table table-bordered table-hover">
 			<tr>
 				<th> Time </th>

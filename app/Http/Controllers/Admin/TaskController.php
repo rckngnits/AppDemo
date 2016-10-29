@@ -9,6 +9,7 @@ use App\Models\Status;
 use App\Models\Client;
 use App\Models\Comment;
 use App\Models\Activity;
+use App\Models\Department;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Task\StoreTaskRequest;

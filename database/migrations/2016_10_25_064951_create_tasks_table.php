@@ -17,7 +17,7 @@ class CreateTasksTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('title');
-            $table->text('description');
+            $table->text('description','4096');
             $table->integer('fk_status_id')->unsigned();
             $table->foreign('fk_status_id')->references('id')->on('statuses');
             $table->integer('fk_user_id_assign')->unsigned();

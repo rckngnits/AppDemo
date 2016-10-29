@@ -16,7 +16,7 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->engine ='InnoDB' ;
             $table->increments('id');
-            $table->string('comment_body');
+            $table->string('comment_body', '4096');
             $table->integer('fk_task_id')->unsigned();
             $table->foreign('fk_task_id')->references('id')->on('tasks');
             $table->integer('fk_user_id')->unsigned();

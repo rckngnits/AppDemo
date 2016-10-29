@@ -34,7 +34,16 @@ class ClientController extends Controller
     
     public function store(StoreClientRequest $request)
     {
-        Client::create($request->all());
+        Client::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'primary_number' => $request['primary_number'],
+            'secondary_number' => $request['secondary_number'],
+            'address' => $request['address'],
+            'pincode' => $request['pincode'],
+            'city' => $request['city'],
+            'state' => $request['state'],
+            ]);
         return back()->with('success','Client Added');
     }
 

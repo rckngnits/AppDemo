@@ -25,12 +25,12 @@
 		<form method="POST" action="{{ url('/admin/client')}}">
 			{{ csrf_field() }}
 			<div class="row">
-				<div class="form-group col-md-7">
+				<div class="form-group col-md-6">
 					<label for="name" class="control-label"> Name : </label>
 					<input class="form-control" name="name" type="text" id="name" placeholder="Enter Full name of Client" required >
 				</div>
 
-				<div class="form-group col-md-5">
+				<div class="form-group col-md-6">
 					<label for="email" class="control-label"> Email : </label>
 					<input class="form-control" name="email" type="email" id="email" placeholder="Email Address of Client" required>
 				</div>
@@ -44,7 +44,7 @@
 
 				<div class="form-group col-md-6">
 					<label for="secondary_number" class="control-label"> Secondary Number : </label>
-					<input class="form-control" name="secondary_number" type="text" id="secondary_number" value= "11111111" placeholder="Enter 11111111 if not required" required>
+					<input class="form-control" name="secondary_number" type="text" id="secondary_number"  placeholder="Alternate Number" required>
 				</div>
 			</div>
 
