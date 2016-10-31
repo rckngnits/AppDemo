@@ -36,7 +36,7 @@ class TaskController extends Controller
 
     public function show(Task $task)
     {
-        $comments = Comment::where('fk_task_id', $task->id)->with(['user'])->get();
+        $comments = Comment::where('fk_task_id', $task->id)->get();
         return view ('admin.tasks.show',compact('task', 'comments'));
     }
 

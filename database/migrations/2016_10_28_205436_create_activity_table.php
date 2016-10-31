@@ -15,6 +15,7 @@ class CreateActivityTable extends Migration
     public function up()
     {
         Schema::create('activities', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('fk_user_id')->unsigned();
             $table->foreign('fk_user_id')->references('id')->on('users');

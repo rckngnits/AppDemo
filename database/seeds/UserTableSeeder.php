@@ -53,12 +53,12 @@ class UserTableSeeder extends Seeder
 	         3 =>
 	        array (
 	            'id' => 4,
-	            'name' => 'Shekhar',
-	            'email' => 'Shekhar@codeground.ml',
+	            'name' => 'shekhar',
+	            'email' => 'shekhar@codeground.ml',
 	            'primary_number' => '8899889988',
 	            'added_by' => '2',
 	            'fk_department_id' => '3',
-	            'password' => bcrypt('Shekhar'),
+	            'password' => bcrypt('shekhar'),
 	            'created_at' => '2016-06-04 13:51:10',
 	            'updated_at' => '2016-06-04 13:51:10',
 	        ),

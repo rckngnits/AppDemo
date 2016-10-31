@@ -9,6 +9,7 @@
 				<th> email </th>
 				<th> Work Number </th>
 				<th> Department </th>
+				<th> Role </th>
 				<th> Status </th>
 			</tr>
 		@foreach ($users as $user)
@@ -17,9 +18,12 @@
 				<td> {{ $user -> name }}</td>
 				<td> {{ $user -> email}}</td>
 				<td> {{ $user -> primary_number }} </td>
-				<td> {{$user -> department -> name }} </td>
+				<td> {{ $user -> department ->name }} </td>
+				<td> {{ $user -> department ->name }}</td>
 				<td> <a href="{{ url('admin/user/'.$user->id)}}" class="btn btn-primary"> Details </a></td>
 			</tr>
 		@endforeach
 		</table>
+		
+		
 @stop

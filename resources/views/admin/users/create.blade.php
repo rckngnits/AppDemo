@@ -30,7 +30,7 @@
 
 		<div class="col-md-6 form-group">
 			<label for="email" class="control-label"> Email : </label>
-			<input type="text" class="form-control" id="email" name="email" required>
+			<input type="email" class="form-control" id="email" name="email" required>
 		</div>
 		</div>
 
@@ -58,6 +58,17 @@
 			@endforeach			
 			</select>
 		</div>
+
+		<div class="col-md-6 form-group">
+			<label for="role_id" class="control-label"> Role (Decides Access level on website) : </label>
+			<select name="role_id" class="form-control">
+			@foreach ($roles as $role)
+			<option value="{{$role -> id }}"> {{ $role ->label }} </option>
+			@endforeach			
+			</select>
+		</div>
+
+		
 		</div> 
 		<div class="row">
 				<div class="col-md-1">

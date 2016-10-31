@@ -28,6 +28,7 @@ Route::group(['middleware' => 'web'], function() {
 
 		route::get('/admin/user', 'Admin\UserController@index');
 		route::post('/admin/user/', 'Admin\UserController@store');
+		route::delete('/admin/user/{user}', 'Admin\UserController@delete');
 		route::get('/admin/user/create', 'Admin\UserController@create');
 		route::get('/admin/user/{user}', 'Admin\UserController@show');
 
@@ -39,6 +40,7 @@ Route::group(['middleware' => 'web'], function() {
 		route::patch('/admin/department/{department}', 'Admin\DepartmentController@update');
 
 		route::get('/admin/role', 'Admin\RoleController@index');
+		route::post('/admin/role', 'Admin\RoleController@store');
 		route::get('/admin/role/create', 'Admin\RoleController@create');
 
 		route::get('/admin/client', 'Admin\ClientController@index');

@@ -24,6 +24,8 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger('fk_department_id');
             $table->foreign('fk_department_id')->references('id')->on('departments');
             $table->string('password');
+            $table->string('image_filename')->nullable();
+            $table->boolean('isActive')->default('1');
             $table->rememberToken();
             $table->timestamps();
         });

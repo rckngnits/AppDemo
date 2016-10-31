@@ -6,7 +6,9 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 Use App\Auth\Traits\PassLessAuthenticable;
 use App\Models\Department;
-use App\Models\App;
+use App\Models\Role;
+use App\Models\Activty;
+use App\Models\Task;
 
 class User extends Authenticatable
 {
@@ -52,4 +54,33 @@ class User extends Authenticatable
         return $this-> hasMany(Activty::class , 'fk_user_id' , 'id');
     }
 
+    public function roles()
+    {
+        // return $this->belongsToMany(Role::class);
+        return $this->belongsToMany('App\Models\Role');
+    }
+
+    public function hasRole($role)
+    {
+        if(is_string($role)){
+            return $this->roles->contains('name', $role);
+        }
+
+        return !! $role->intersect($this->roles)->count();
+    }
 }
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+

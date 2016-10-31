@@ -8,19 +8,28 @@
 			<p style="font-size:18px;" class="col-md-offset-2"> <b> {{ $user->name }} ({{$user -> department -> name}}) </b> </p>
 			<p class="col-md-offset-2"> Email :- <a href="#"> {{ $user-> email }} </a> </p>
 			<p class="col-md-offset-2"> contact :- {{$user -> primary_number }}</p>
+			<p class="col-md-offset-2"> Department :- {{$user -> department -> name }}</p>
+			<p class="col-md-offset-2"> Role :-  </p>
 		</div>
 		<div class="col-md-4">
 		<div class="col-md-12 form-group">
 			<a href="#" class="btn btn-success btn-block form-control"> Update Details </a>
 		</div>
+		
 
 		<div class="col-md-12 form-group">
-			<a href="#" class="btn btn-primary btn-block form-control"> Change Department </a>
+			<a href="#" class="btn btn-primary btn-block form-control"> change Department </a>
 		</div>
 
+		<form action="/admin/user/{{$user->id}}" method="POST">
+		
+		{{ method_field('DELETE')}}
+		{{ csrf_field() }}
+
 		<div class="col-md-12 form-group">
-			<a href="#" class="btn btn-danger btn-block form-control"> Remove User </a>
+			<button class="btn btn-danger btn-block form-control"> remove User </button>
 		</div>
+		</form>
 
 
 		</div>

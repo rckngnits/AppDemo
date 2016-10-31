@@ -19,7 +19,7 @@
 	<div class="col-md-6">
 		<h2> Assigned User Details </h2>
 		<div class="row">
-			<div class="col-md-12"> Name :- {{$task->user -> name }} </div> 
+			<div class="col-md-12"> Name :- {{$task-> user -> name }} </div> 
 		</div>
 		<div class="row">
 			<div class="col-md-12"> Department :- {{ $task -> user-> department -> name}} </div> 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width= device-width, initial-scale-1">
+  <meta name="viewport" content="width= device-width">
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -18,11 +18,11 @@
   <link href="/css/admin.css" rel="stylesheet">
   <link href="/css/font-awesome.css" rel="stylesheet">
 
-  <script>
+<!--   <script>
     window.'ABC Services' = <?php echo json_encode([
      'csrfToken' => csrf_token(),
      ]); ?>
-   </script>
+   </script> -->
  </head>
 
  <body>
@@ -38,14 +38,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">ABC Services Admin Pannel</a>
+        <a class="navbar-brand" href="{{url('/admin/dashboard')}}">ABC Services Admin Pannel</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{ Auth::user()->name }} <span class="caret"></span></a>
+            <a href="3" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{ Auth::user()->name }} <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="{{ url('/admin/profile') }}">Profile</a></li>
               <li><a href="{{ url('/admin/settings') }}">Settings</a></li>
@@ -80,8 +80,8 @@
         <img src=" {{ url('/img/user.gif') }} " />
       </div>
       <div class="col-md-8">
-        <h4> {{ Auth::user()->name }} </h4>
-        <h6> Management </h6>
+        <h4> <a href="{{url('admin/profile')}}" style="text-decoration: none;"> {{ Auth::user()-> name }} </a></h4>
+        <h6> {{ Auth::user()-> department -> name }} </h6>
       </div>
     </div>
 
@@ -152,6 +152,7 @@
         </ul> 
       </div>
 
+      @can('view_settings')
         <div class="panel">
         <ul>
           <li> <a href="#" data-parent="menu" data-toggle="collapse" class="accordion-toggle" data-target="#settings">  <i class="fa fa-cog" aria-hidden="true"></i> Settings </a> </li>
@@ -162,6 +163,7 @@
           <li> <a href="{{ url('/admin/role') }}"> Manage roles </a> </li>    
         </ul> 
       </div>
+      @endcan
     </menu>
   </div>
   <!-- End Menu Section -->
